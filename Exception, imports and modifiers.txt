@@ -1,0 +1,53 @@
+1. What is an exception in Java ?
+Ans: An exception is an abnormal event that disrupts the flow of normal program execution that unless handled could lead to the termination of that program. In real-world scenarios, a program could run into an exception if it tries to access a corrupted/non-existent file or if a network error happens or if the JVM runs out of memory, or if the code is trying to access an index of an array which does not exist and so on.
+
+2. What are the types of Exception ?
+Ans: 1) Built-in Excpetion
+	a)Checked Exception
+	b)Unchecked Exception
+     2) User-defined Exception
+
+3. How are exceptions handled in Java ?
+Ans: In Java, exceptions could be handled in the following ways,
+ 	try-catch block: The try section holds the code that needs to be normally executed and it monitors for any possible exception that could occur. The catch block “catches” the 			exception thrown by the try block. It could consist of logic to handle failure scenario or the catch block could simply rethrow the exception by using the “throw” keyword.
+
+	finally block: Regardless of whether an exception has occurred or not, if we need to execute any logic, then we place it in the final block that is usually associated with the try-		catch block or just with the try block. The final block is not executed when System.exit(0) is present in either the try or catch block.
+
+4. What are the important methods defined in Java's Exception class ?
+Ans: 	1) String getMessage(); 
+	2) String getLocalizedMessage(); 
+	3) synchronized Throwable getCause(); 
+	4) String toString();
+
+5. What are runtime exceptions in Java ?
+Ans: Runtime exceptions are those exceptions that occur at the run time of the program execution. These exceptions are not noticed by the compiler at the compile time and hence the program 	successfully gets compiled. Therefore, they are also called unchecked exceptions. All subclasses of the java.lang.RunTimeException class and java.lang.Error class belongs to 	runtime exceptions. Examples of runtime exceptions include NullPointerException, NumberFormatException, ArrayIndexOutOfBoundException, StackOverflowError, ClassCastException, 	ArithmeticException, ConcurrentModificationException, etc.
+
+6. What is the difference between the throw and throws keywords in Java ?
+Ans: The throw keyword allows a programmer to throw an exception object to interrupt normal program flow. The exception object is handed over to the runtime to handle it. 
+	For example, if we want to signify the status of a task is outdated, we can create an OutdatedTaskException that extends the Exception class and we can throw this exception object 	as shown below
+	if (task.getStatus().equals("outdated")) {
+    	     //throw new OutdatedTaskException("Task is outdated");
+	}
+
+     The throws keyword in Java is used along with the method signature to specify exceptions that the method could throw during execution. For example, a method could throw   	NullPointerException or FileNotFoundException and we can specify that in the method signature as shown below
+	
+	public void someMethod() throws NullPointerException, FileNotFoundException {
+    		// do something
+	}
+
+7. What is the difference between error and exception in Java ?
+Ans:  Errors are mainly caused by the environment in which an application is running. For example, OutOfMemoryError happens when JVM runs out of memory. 
+      Where as exceptions are mainly caused by the application itself. For example, NullPointerException occurs when an application tries to access null object.
+
+8. Explain the hierarchy of Exception in Java ?
+Ans: In the java exception class hierarchy, the class at the top is the Throwable class, which is a direct subclass of the Object class. Throwable has two direct subclasses Exception and 	Error
+
+9. Define Packages in Java.
+Ans: Packages are nothing but folders in java and A 'package' can be defined as a group of related types (classes, interfaces, enumerations and annotations ) providing access protection 	and name space management 
+
+10. What are Access modifiers in Java ?
+Ans: Access Modifiers are those modifiers that are used to restrict the visibility of classes, fields, methods, and constructors.
+	(private,protected,defualt,public).
+
+11. What are non-access modifiers in Java ?
+Ans: static,final,abstract and synchronized.
